@@ -10,9 +10,5 @@
 		<members>AccountHandler</members>
 		<name>ApexClass</name>
 	</types>
-	<!--<types>
-		<members>AccountTrigger</members>
-		<name>ApexTrigger</name>
-	</types>-->
 	<version>51.0</version>
 </Package>
