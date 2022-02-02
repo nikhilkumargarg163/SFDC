@@ -70,3 +70,68 @@ var obj = {
 console.log(obj);
 console.log(obj.name);
 console.log(obj["phone number"]);
+
+let arr1 = ["Nannu","chotu"];
+let arr2 = ["chhatipeeta","Biskhopda"];
+let arr3 = [...arr1, ...arr2];
+console.log(arr3);
+let text = "Nannu Bansal";
+let charList = [...text];
+console.log(charList);
+let arr4  = ["nikhil",...arr3];
+console.log(arr4);
+let arr5 = [1,3,2,4];
+let arr6 = [...arr5,"nikhil"];
+console.log(arr6);
+
+let obj2 = {
+    name:"nikhil",
+    age:30,
+    dob:"31 Oct 1994"
+};
+let obj3 = {
+    name : "nannu",
+    age : 4,
+    class:"UKG"
+}
+let obj5 = 
+{
+    name:"chotu",
+    age:1,
+    infant : true
+};
+let obj4 = {...obj2,...obj3,...obj5};
+console.log(obj4);
+
+let arr10 = ["nikhil","chotu"];
+let arr11 = arr10;
+arr11.push("nannu");
+console.log(arr10);
+console.log(arr11);
+arr11 = [...arr10];
+arr11 = [...arr11,"test"];
+console.log(arr10);
+console.log(arr11);
+arr11 = [...arr10];
+arr11.push("chatipita");
+console.log(arr10);
+console.log(arr11);
+
+let obj10= [{name:"nikhil"},{name:"chotu"}];
+let obj11 = obj10;
+obj11[0].name = "nannu";
+console.log(obj10);
+console.log(obj11);
+
+let obj12 = [...obj10];
+obj12[0].name = "nikhil";
+console.log(obj10);
+console.log(obj11);
+console.log(obj12);
+
+let obj14 = JSON.parse(JSON.stringify(obj10));
+obj14[0].name = "test123";
+console.log(obj10);
+console.log(obj11);
+console.log(obj12);
+console.log(obj14);
