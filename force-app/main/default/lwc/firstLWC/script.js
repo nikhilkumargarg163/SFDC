@@ -55,7 +55,7 @@ var a;
 console.log(a);
 var b = null;
 console.log(b);
-console.log(a===b);*/
+console.log(a===b);
 
 var arr = [1,3,4];
 console.log(arr);
@@ -135,3 +135,74 @@ console.log(obj10);
 console.log(obj11);
 console.log(obj12);
 console.log(obj14);
+
+var arr1 = ["nikhil","chotu","nannu"];
+var [name1,name2,name3] = arr1;
+console.log(name1);
+console.log(name2);
+console.log(name3);
+
+var obj1 = {name:"nannu", age:4,dob:"16/03/2017"};
+let {name,age,dob}= obj1;
+console.log(dob);
+console.log(name);
+
+let a= 10,b=20;
+let str = "sum of "+ a+ " "+b+" is "+ a+b;
+console.log(str);
+str = `sum of ${a} and ${b} is ${a+b}`;
+console.log(str);
+
+let str = 'my name is amar akbar anthony name pe mat jao';
+console.log(str.indexOf('name'));
+console.log(str.indexOf('nannu'));
+console.log(str.startsWith("my"));
+console.log(str.includes('nannu'));
+console.log(str.includes('amar'));
+console.log(str.slice(11,15));
+
+let obj = {name:"nannu", age :4, dob:"16/03/2017"};
+console.log(Object.keys(obj));
+console.log(Object.values(obj));
+let str = JSON.stringify(obj);
+console.log(str);
+console.log(JSON.parse(str));
+
+var arr = [11,5,7,31,13];
+var newArray = arr.map(function(currentItem,index,actualArray){
+    console.log(`current Item ${currentItem} Index ${index} original Array ${actualArray}`);
+    return currentItem +2;
+});
+console.log(arr);
+console.log(newArray);
+
+var filteredArray = arr.filter(function(currentItem, index, actualArray){
+    console.log(`current Item ${currentItem} index ${index} actualArray ${actualArray}`);
+    return currentItem > 10
+});
+console.log(arr);
+console.log(filteredArray);
+var everyTest = newArray.every(function(currentItem){
+    return currentItem > 15;
+});
+var someTest = newArray.some(function(currentItem){
+    return currentItem > 15;
+});
+console.log(everyTest);
+console.log(someTest);
+
+var sortedarr = filteredArray.sort(function(a,b){
+    return b-a;
+})
+console.log(sortedarr)
+let strArr = ["nikhil","chotu","nannu"];
+console.log(strArr.sort());
+
+var sum = sortedarr.reduce(function(total,currentItem,index,actualArray){
+    return total+currentItem;
+},10);
+console.log(sum)
+
+sortedarr.forEach(function(currentitem,index,actualArray){
+    console.log(currentitem.toString())
+})*/
