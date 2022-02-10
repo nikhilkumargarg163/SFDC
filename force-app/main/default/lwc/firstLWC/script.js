@@ -205,4 +205,71 @@ console.log(sum)
 
 sortedarr.forEach(function(currentitem,index,actualArray){
     console.log(currentitem.toString())
-})*/
+})
+
+function promiseLearn(data){
+    return new Promise(function(resolve,reject){
+    if(data === 'Success')
+    {
+        return resolve("Successfully Done");
+    }else{
+        return reject("unsuccessfully Done");
+    }
+})
+};
+promiseLearn("error ").then(function(data)
+{
+    console.log(data);
+}).catch(function(data){
+    console.error(data);
+});
+
+import SetName,{PersonName,printName,lname} from './utility.js'
+
+printName(PersonName);    
+SetName("garg");
+console.log(lname)
+
+import setName,* as importDetail from './utility.js'
+importDetail.printName(importDetail.PersonName);
+setName("garg");
+console.log(importDetail.lname)*/
+
+/*let element = document.querySelector('div');
+console.log(element);
+element.style.color = 'green';
+console.log(element);
+
+let elementsAll = document.querySelectorAll('div');
+console.log(elementsAll);
+elementsAll.forEach(function(item){
+    item.style.color = 'red';
+    console.log(item);
+});
+let div1 = document.querySelector(".div1");
+function mousemoveHandler()
+{
+    let div2 = document.querySelector(".div2")
+    div2.innerHTML = Math.random()
+}
+div1.addEventListener("mousemove",mousemoveHandler);
+function removeHandler()
+{
+    div1.removeEventListener("mousemove",mousemoveHandler);
+}
+
+
+let btn = document.querySelector('button')
+btn.addEventListener("click",removeHandler)
+
+function customEventCall()
+{
+    let event = new CustomEvent("customDivEvent",{detail:{name: "chotu", age:1}});
+    document.dispatchEvent(event);
+    //console.log(event);
+}
+window.customEventCall = customEventCall;
+let mainDiv = document.querySelector(".main-div");
+document.addEventListener("customDivEvent",function(data){
+    mainDiv.innerHTML = mainDiv.innerHTML+ data.detail.name + data.detail.age
+});*/

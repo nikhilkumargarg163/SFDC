@@ -3,14 +3,22 @@
     <head>
         <title>Html Page learning</title>
         <link rel="stylesheet" href="./style.css">
-        <script src="./script.js"></script>
+        <script type="module" src="./script.js"></script>
+        
     </head>
     <body>
-        <div class="main-div">First Division of Html Page..........<span>Inline tag</span></div>
+        <button> Click here</button>
+        <!--<div class="main-div" onclick="customEventCall()">First Division of Html Page..........<span>Inline tag</span></div>-->
         <div>second line</div>
         <p>third line</p>
         <span Id="inlineTag">Second inline Tag</span><span>inline continued</span><div>New Block Tag</div><span>third inline</span>
         <div class="div1">First Box</div>
         <div class="div2">Second Box</div>
+
+        <div onclick="alert('Grandparent Div')">GrandParent Div
+            <div onclick="alert('Parent Div')">Parent Div
+                <div onclick="alert('Child div')">child div</div>
+            </div>    
+        </div>
     </body>
 </html>
