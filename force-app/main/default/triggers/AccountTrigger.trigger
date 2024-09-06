@@ -2,7 +2,7 @@
 trigger AccountTrigger on Account (after insert, after update, after undelete) {
     if(trigger.isAfter && trigger.isInsert)
     {
-        AccountHandler.afterInsert(trigger.newMap)''
+        AccountHandler.afterInsert(trigger.newMap);
     }
     if(trigger.isAfter && trigger.isUpdate)
     {

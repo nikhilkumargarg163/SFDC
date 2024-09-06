@@ -1,0 +1,9 @@
+.test{
+    color:green;
+    font-size: 10px;
+    font-style: bold;
+    border: orange solid 1px;
+}
+.test:hover{
+    color: red;
+}

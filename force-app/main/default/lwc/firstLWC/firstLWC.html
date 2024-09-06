@@ -1,3 +1,124 @@
 <template>
+    <div class="slds-brand-band slds-brand-band_small">
+    <p> {fullName}</p>
+    <p>{age}</p>
+    <div>{classes}</div>
+    <div>{evalExpression}</div>
     
+    <div class="slds-var-m-around_medium">
+        <lightning-card  title="Two Way Data Binding">
+            <lightning-input type="text" onkeyup={keyUpHandler} label="enter full name"></lightning-input>
+        </lightning-card>
+    </div>
+
+    <p>{details.name}</p>
+    <div class="slds-var-m-around_medium">
+        <lightning-card  title="Track Properties">
+            <lightning-input type="text" onkeyup={trackHandler} label="enter first Name"></lightning-input>
+        </lightning-card>
+    </div>
+
+    <lightning-card title="conditional rendering" >
+        <div class="slds-var-m-around_x-large">
+            <lightning-input type="text" label="Email Id" onkeyup={validateEmail}>
+            </lightning-input>
+        </div>
+        <template if:true={emailEntered}>
+            <span>Please enter email Id</span>
+        </template>
+        <template if:false={checkEmailRGExp}>
+            <span>email ID not in correct format</span>
+        </template>
+    </lightning-card>
+
+    <lightning-card title="looping for:each" class="slds-var-m-around_medium">
+        <ul class="slds-has-dividers_around-space">
+            <template for:each={classList} for:item="classname" for:index="i">
+                <li class="slds-item test" key={classname}>{classname}</li>
+            </template>
+        </ul>
+    </lightning-card>
+
+
+    <lightning-card title="iterator looping" class="slds-var-m-around_medium">
+        <ul class="slds-has-dividers_around-space" >
+            <template iterator:currentitem={classList}>
+                <li class="slds-item" key={currentitem.value}>{currentitem.value}</li>              
+            </template>
+        </ul>
+        
+    </lightning-card>
+
+    <lightning-card class="slds-var-m-around_medium" title="iterator object">
+        <ul class="slds-has-dividers_around-space">
+            <template iterator:item={persons}>
+                <div key={item.value.id}>
+                    <template if:true={item.first}>
+                        <div class="slds-box slds-theme_shade">
+                            Person Data is listed below.
+                        </div>
+                    </template>
+                    <li class="slds-item">
+                        <strong>{item.value.name}</strong> 
+                        {item.value.age}
+                    </li>
+                    <template if:true={item.last}>
+                        <div class="slds-box slds-theme_shade">
+                            Person Data ended here
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </ul>
+    </lightning-card>
+
+
+    <lightning-card title="for:each object" class="slds-var-m-around_medium">
+        <ul class="slds-has-dividers_around-space" >
+            <template for:each={persons} for:item="per" for:index="index">
+                <li class="slds-item" style="color:darkseagreen; font-size: medium;" key={per.id}>{per.name}</li>
+            </template>
+        </ul>
+    </lightning-card>
+
+    <lightning-card title="this.template.querySelector">
+        <div class="slds-var-m-around_medium">
+            <h1>hello bhai sahab</h1>
+            <button onclick={accessElements}>click me</button>
+            <template for:each={mans} for:item="man" for:index="index">
+                <div key={man} class="mens">{man}</div>
+            </template>
+            <div class="blankDiv" lwc:dom="manual"></div>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="SLDS">
+        <div class="slds-p-around_medium">
+            <div class="slds-box">
+                <p>This is a regular-sized box.</p>
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters slds-var-m-around_medium">
+            <div class="slds-col slds-size_3-of-12">
+            <span class="slds-badge slds-theme_success">Green Light</span>
+            </div>
+            <div class="slds-col slds-size_4-of-12">
+                <span class="slds-badge slds-theme_error">Red Light</span>
+            </div>
+            <div class="slds-col slds-size_5-of-12">
+            <span class="slds-badge slds-theme_warning">Orange Light</span>
+            </div>
+        </div>
+    </lightning-card>
+</div>
+
+<lightning-card title="Dynamic CSS">
+    <div class="slds-var-m-around_medium">
+        <lightning-input type="number" value={percent} label="percentage" onkeyup={updateProgress}></lightning-input>
+        <div style={percentage} class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert">
+        {percent}%
+        </div>
+    </div>
+</lightning-card>
+
 </template>

@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="Quiz App" class="slds-var-m-around_medium">
+        <form>
+            <template for:each={questions} for:item="ques">
+                <div key={ques.id} class="slds-var-m-around_medium">
+                    <strong class="test">{ques.id}:-{ques.question}</strong>
+                    <div class="slds-grid slds-gutters slds-var-p-top_small">
+                        <div class="slds-col ">
+                            <input type="radio" name={ques.id} value="a" onchange={handleChangeEvent}/>
+                            {ques.answers.a}
+                        </div>
+                        <div class="slds-col">
+                            <input type="radio" name={ques.id} value="b" onchange={handleChangeEvent}/>
+                            {ques.answers.b}
+                        </div>
+                        <div class="slds-col">
+                            <input type="radio" name={ques.id} value="c" onchange={handleChangeEvent}/>
+                            {ques.answers.c}
+                        </div>
+                    </div>
+                </div>
+            </template>
+            <lightning-button variant="brand" label="Submit" type="submit" title="Submit Answers" onclick={submit} class="slds-m-around_small" disabled={disableSubmit}></lightning-button>
+            <lightning-button variant="brand" label="Reset" type="reset" title="Reset Answers" onclick={reset} class="slds-m-around_small"></lightning-button>
+        </form>
+        <template lwc:if={showResult}>
+            <div class={resultColor}>you have scored {correctAnswerCount} out of {questions.length}</div>
+        </template>
+    </lightning-card>
+
+
+    <!--<lightning-card title="Parent Child Component">
+        <c-first-l-w-c></c-first-l-w-c>
+    </lightning-card>-->
+</template>

@@ -1,8 +1,19 @@
 /****Day1 Learning */
 /*console.log(window);
 var a = 10;
-console.log(window.a);
-var a = 20;
+console.log(a);
+if(a==10)
+{
+    var z = 100;
+    let q = 70;
+    const c = 93;
+}
+console.log(z);
+const p = "tets";
+
+var a = Symbol("test");
+console.log(a);
+/*var a = 20;
 console.log(a);
 a=44;
 console.log(this.a);
@@ -15,12 +26,7 @@ const b = 11;
 console.log(b);
 console.log(window.b);
 console.log(this.b);
-if(a==20)
-{
-    var z = 100;
-    let q = 70;
-    const c = 93;
-}
+
 console.log(z);
 function test()
 {
@@ -82,7 +88,7 @@ let arr4  = ["nikhil",...arr3];
 console.log(arr4);
 let arr5 = [1,3,2,4];
 let arr6 = [...arr5,"nikhil"];
-console.log(arr6);
+console.log(arr6);*/
 
 let obj2 = {
     name:"nikhil",
@@ -97,13 +103,12 @@ let obj3 = {
 let obj5 = 
 {
     name:"chotu",
-    age:1,
     infant : true
 };
 let obj4 = {...obj2,...obj3,...obj5};
 console.log(obj4);
 
-let arr10 = ["nikhil","chotu"];
+/*let arr10 = ["nikhil","chotu"];
 let arr11 = arr10;
 arr11.push("nannu");
 console.log(arr10);
@@ -272,4 +277,60 @@ window.customEventCall = customEventCall;
 let mainDiv = document.querySelector(".main-div");
 document.addEventListener("customDivEvent",function(data){
     mainDiv.innerHTML = mainDiv.innerHTML+ data.detail.name + data.detail.age
-});*/
+});
+
+function test(){
+    console.log("function called");
+}
+test();
+
+var test1 =data => data+10;
+console.log(test1(10));
+
+var obj1 = {
+    aadmi : "chotu",
+    getName : function(){
+        console.log(this.aadmi);
+        var fullName = () => {console.log(this.aadmi);
+        console.log(this.aadmi + " biskhopda");}
+        fullName()
+    }
+}
+obj1.getName();*/
+
+// let timeId = setTimeout(function(){
+//     console.log("hello");
+// },2000)
+// console.log(timeId);
+// let time2 = setTimeout(function(){
+//     console.log("hello 2")
+// },2000)
+// console.log(time2);
+// clearTimeout(timeId)
+// let time3 = setTimeout(function(){
+//     console.log("hello3")
+// },6000)
+// console.log(time3)
+
+// let time34 = setInterval(function(){
+//     console.log(time3)
+// },1000)
+// console.log(time34)
+
+// clearInterval(time34);
+
+// let time35 = setInterval(function(){
+//     console.log(time34);
+// },4000)
+// console.log(time35);
+
+// let arr = [5,6,7,8,9,3];
+// let newArr = arr.map(item=>item*2)
+// console.log(newArr);
+
+
+/*var btn = document.querySelector('button');
+btn.addEventListener("click",()=>{
+    console.log(btn.innerHTML);
+    btn.innerText = "bhag  ja";
+})*/

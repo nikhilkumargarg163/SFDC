@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="lifecycle learning Parent">
+        <div class="newDiv">
+            <lightning-input  onchange={updateName}></lightning-input>
+            {name}
+            <lightning-button variant="brand" label="Toggle Child" title="Add Remove Child" onclick={handleClick}></lightning-button>
+            <template if:true={showChild}>
+                <c-lifecycle-child></c-lifecycle-child>
+            </template>
+        </div>
+    </lightning-card>
+</template>
